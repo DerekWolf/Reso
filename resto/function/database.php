@@ -1,11 +1,11 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 
-function addUser($nom, $prenom, $mdp)
+function addUser($nom, $prenom, $mdp, $etab)
 {
 	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
 	mysql_select_db('menu', $connect);
-	$sql = "INSERT INTO utilisateur(Nom, Prenom, MdP) VALUES('$nom', '$prenom', '$mdp')";
+	$sql = "INSERT INTO utilisateur(Nom, Prenom, MdP, Etablissement) VALUES('$nom', '$prenom', '$mdp', '$etab')";
 	mysql_query($sql) or die('Erreur lors de l\'ajout en base de donnés d\'un Utilisateur.');
 	mysql_close();
 }
@@ -167,6 +167,83 @@ function createMenu()
 	mysql_select_db('menu', $connect);
 	$sql = "INSERT INTO `plat` VALUES ()";
 	mysql_query($sql) or die (mysql_error());
+	mysql_close();
+}
+
+
+function returnNombreEntree($date, $nom)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT * FROM reservation WHERE jour='".$date."' and Entre='".$nom."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return $ret;
+	mysql_close();
+}
+
+function returnNombreViande($date, $nom)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT * FROM reservation WHERE jour='".$date."' and Viande='".$nom."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return $ret;
+	mysql_close();
+}
+
+function returnNombreAccompagnement($date, $nom)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT * FROM reservation WHERE jour='".$date."' and Accompagnement='".$nom."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return $ret;
+	mysql_close();
+}
+
+function returnNombreDessert($date, $nom)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT COUNT(*) FROM reservation WHERE jour='".$date."' and Dessert='".$nom."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return $ret;
+	mysql_close();
+}
+
+function returnNmbReservation($date)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT * FROM reservation WHERE jour='".$date."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return $ret;
+	mysql_close();
+}
+
+function returnInfoUser()
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "SELECT distinct Nom, Prenom, Etablissement ,(Select count(jour) from reservation where IdUtilisateur = Id) AS Nmb FROM utilisateur";
+	$res = mysql_query($sql) or die (mysql_error());
+	return $res;
+	mysql_close();
+}
+
+function personneParEtablissement($etablissement)
+{
+	$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
+	mysql_select_db('menu', $connect);
+	$sql = "select * FROM utilisateur where Etablissement='".$etablissement."'";
+	$res = mysql_query($sql) or die (mysql_error());
+	$ret = mysql_num_rows($res);
+	return ($ret - 1);
 	mysql_close();
 }
 ?> 

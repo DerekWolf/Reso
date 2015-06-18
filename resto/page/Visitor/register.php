@@ -5,6 +5,16 @@ if(!isset($_POST['name']) || empty($_POST['name']))
 	<h1>Inscription</h1>
 	<form action="#" method="POST">
 		<p>
+			<label for"Etablissement"> Choisissez votre établissement :</label>
+			<select name="etablissement">
+				<option value"Siege">Siege</option>
+				<option value"SAAD">SAAD</option>
+				<option value"SAHEHD">SAHEHD</option>
+				<option value"SAVS">SAVS</option>
+				<option value"SPM">SPM</option>
+			</select>
+		</p>
+		<p>
 			<label for"name">Nom : </label>
 			<input id="name" name="name" required />
 		</p>
@@ -23,7 +33,8 @@ if(!isset($_POST['name']) || empty($_POST['name']))
 	$nom = $_POST['name'];
 	$prenom = $_POST['firstName'];
 	$mdp = $_POST['mdp'];
-	addUser($nom, $prenom, $mdp);
+	$etablissement= $_POST['etablissement'];
+	addUser($nom, $prenom, $mdp, $etablissement);
 ?>
 	<h1>Inscription terminée</h1>
 	<p>Félicitation vous êtes inscrits !</p>

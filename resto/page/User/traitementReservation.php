@@ -77,6 +77,6 @@ function checkFromage($var)
 	}
 }
 
-header('Location: ../index.php?page=11');
+header('Location: /index.php?page=11');
 
 ?>

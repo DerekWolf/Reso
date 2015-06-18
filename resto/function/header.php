@@ -6,7 +6,6 @@
 	<head>
 		<script type="text/javascript"></script>
 		<meta charset="UTF-8">
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<link rel="stylesheet" type="text/css" href="./asset/css/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="./asset/css/bootflat/css/bootflat.min.css">
 		<link rel="stylesheet" type="text/css" href="./asset/css/style.css">
@@ -20,7 +19,7 @@
 			echo ("<title> Réservation Repas  - ".$_SESSION['Nom']."</title>");
 		}elseif($_SESSION["statut"] == "Administrateur")
 		{
-			echo ("<title> Réservation Repas - Adminsitrateur</title>");
+			echo ("<title> Réservation Repas - Administrateur</title>");
 		}else{
 			echo ("<title> Réservation Repas </title>");
 		}
@@ -55,5 +54,4 @@
 			</ul>	
 		</nav>
 	</header>
-	<body>
-		
+	<body>	
