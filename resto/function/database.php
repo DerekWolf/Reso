@@ -246,4 +246,20 @@ function personneParEtablissement($etablissement)
 	return ($ret - 1);
 	mysql_close();
 }
+
+function checkToAutorise($dateToCheck)
+{
+	$date = dateAct();
+	$troisJours = 3600 * 24 * 3;
+	$dateLimit = strtotime($dateToCheck) - $troisJours;
+	$dateLim = date('Y-m-d', $dateLimit);
+	if($date <= $dateLim)
+	{
+		$res = true;
+		return $res;
+	}else{
+		$res = false;
+		return $res;
+	}
+}
 ?> 

@@ -88,8 +88,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Monday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($Monday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Monday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Monday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -116,8 +124,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Tuesday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($Tuesday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Tuesday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Tuesday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -144,8 +160,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Wednesday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($Wednesday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Wednesday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Wednesday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -172,8 +196,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Thursday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($Thursday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Thursday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Thursday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -200,8 +232,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Friday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($Friday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Friday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $Friday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 	</section>
@@ -249,8 +289,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextMonday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($NextMonday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextMonday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextMonday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -277,8 +325,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/odif.php?id=<?php echo $Id;?>&date=<?php echo $NextTuesday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/elete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($NextTuesday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextTuesday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextTuesday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -305,8 +361,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/odif.php?id=<?php echo $Id;?>&date=<?php echo $NextWednesday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($NextWednesday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextWednesday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextWednesday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -333,8 +397,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextThursday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($NextThursday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextThursday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextThursday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 
@@ -361,8 +433,16 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 			?>
 		</p>
 		<form id="formulaire" action="">
-			<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextFriday;?>');" value="Modifier"/>
-			<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php
+			if (checkToAutorise($NextFriday)) {
+				?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextFriday;?>');" value="Modifier"/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler"/>
+			<?php }else{ ?>
+				<input type="button" class="btn btn-default" onclick="FrameSubmit('page/User/modif.php?id=<?php echo $Id;?>&date=<?php echo $NextFriday;?>');" value="Modifier" disabled/>
+				<input type="button" class="btn btn-default" onclick="FormSubmit('page/User/delete.php');" value="Annuler" disabled/><?php
+			}
+			?>
 		</form>
 	</div>
 	</section>
