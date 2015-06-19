@@ -28,3 +28,6 @@ $nmbSiege = personneParEtablissement("Siege");
 			}
 		?>
 </table>
+<form action="function/export_excel_resUtilisateur.php">
+	<input type="submit" value="Exporter au format Excel">
+</form>
