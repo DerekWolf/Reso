@@ -15,33 +15,33 @@ mysql_select_db('menu', $connect);
 
 $id = $_SESSION["Id"];
 
-$Ent1 = $_POST['Entree1'];
-$Ent2 = $_POST['Entree2'];
-$Ent3 = $_POST['Entree3'];
+echo ($Ent1 = mysql_real_escape_string($_POST['Entree1']));
+echo ($Ent2 = mysql_real_escape_string($_POST['Entree2']));
+echo ($Ent3 = mysql_real_escape_string($_POST['Entree3']));
 
-$Via1 = $_POST['Viande1'];
-$Via2 = $_POST['Viande2'];
+echo ($Via1 = mysql_real_escape_string($_POST['Viande1']));
+echo ($Via2 = mysql_real_escape_string($_POST['Viande2']));
 
-$Acc1 = $_POST['Accompagnement1'];
-$Acc2 = $_POST['Accompagnement2'];
+echo ($Acc1 = mysql_real_escape_string($_POST['Accompagnement1']));
+echo ($Acc2 = mysql_real_escape_string($_POST['Accompagnement2']));
 
-$Des1 = $_POST['Dessert1'];
-$Des2 = $_POST['Dessert2'];
+echo ($Des1 = mysql_real_escape_string($_POST['Dessert1']));
+echo ($Des2 = mysql_real_escape_string($_POST['Dessert2']));
 
 $Date = $_POST['date'];
 
-$Entree1 = "UPDATE `plat` SET `Type`='Entree', `Nom`='".$Ent1."' , `Id`='E1',`Jour`= '".$Date."' WHERE ";
-$Entree2 = "UPDATE `plat` SET `Type`='Entree',`Nom`='".$Ent2."',`Id`='E2',`Jour`='".$Date."'";
-$Entree3 = "UPDATE `plat` SET `Type`='Entree',`Nom`='".$Ent3."',`Id`='E3',`Jour`='".$Date."'";
+$Entree1 = "UPDATE `plat` SET `Nom`='".$Ent1."' WHERE `Jour`='".$Date."' and `Id` ='E1'";
+$Entree2 = "UPDATE `plat` SET `Nom`='".$Ent2."' WHERE `Jour`='".$Date."' and `Id` ='E2'";
+$Entree3 = "UPDATE `plat` SET `Nom`='".$Ent3."' WHERE `Jour`='".$Date."' and `Id` ='E3'";
 
-$Viande1 = "UPDATE `plat` SET `Type`='Viande',`Nom`='".$Via1."',`Id`='V1',`Jour`='".$Date."'";
-$Viande2 = "UPDATE `plat` SET `Type`='Viande',`Nom`='".$Via2."',`Id`='V2',`Jour`='".$Date."'";
+$Viande1 = "UPDATE `plat` SET `Nom`='".$Via1."' WHERE `Jour`='".$Date."' and `Id` ='V1'";
+$Viande2 = "UPDATE `plat` SET `Nom`='".$Via2."' WHERE `Jour`='".$Date."' and `Id` ='V2'";
 
-$Accompagnement1 = "UPDATE `plat` SET `Type`='Accompagnement',`Nom`='".$Acc1."',`Id`='A1',`Jour`='".$Date."'";
-$Accompagnement2 = "UPDATE `plat` SET `Type`='Accompagnement',`Nom`='".$Acc2."',`Id`='A2',`Jour`='".$Date."'";
+$Accompagnement1 = "UPDATE `plat` SET `Nom`='".$Acc1."' WHERE `Jour`='".$Date."' and `Id` ='A1'";
+$Accompagnement2 = "UPDATE `plat` SET `Nom`='".$Acc2."' WHERE `Jour`='".$Date."' and `Id` ='A2'";
 
-$Dessert1 = "UPDATE `plat` SET `Type`='Dessert',`Nom`='".$Des1."',`Id`='D1',`Jour`='".$Date."'";
-$Dessert2 = "UPDATE `plat` SET `Type`='Dessert',`Nom`='".$Des2."',`Id`='D2',`Jour`='".$Date."'";
+$Dessert1 = "UPDATE `plat` SET `Nom`='".$Des1."' WHERE `Jour`='".$Date."' and `Id` ='D1'";
+$Dessert2 = "UPDATE `plat` SET `Nom`='".$Des2."' WHERE `Jour`='".$Date."' and `Id` ='D2'";
 
 mysql_query($Entree1) or die('Erreur lors de l\'ajout en base de donnés1');
 mysql_query($Entree2) or die('Erreur lors de l\'ajout en base de donnés2');

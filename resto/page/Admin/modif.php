@@ -17,7 +17,7 @@ $d = 0;
 					while ($item = mysql_fetch_assoc($Entree)) {
 						$e += 1;
 						?>
-						<input type='text' name='Entree<?php echo($e);?>' placeholder='<?php echo($item['Nom']); ?>'<br>
+						<input type='text' name='Entree<?php echo($e);?>' value='<?php echo($item['Nom']); ?>'<br>
 						<?php
 					}
 				?>
@@ -29,7 +29,7 @@ $d = 0;
 					while ($item = mysql_fetch_assoc($Viande)) {
 						$v += 1;
 						?>
-						<input type='text' name='Viande<?php echo($v);?>' placeholder='<?php echo($item['Nom']); ?>'<br>
+						<input type='text' name='Viande<?php echo($v);?>' value='<?php echo($item['Nom']); ?>'<br>
 						<?php
 					}
 				?>
@@ -41,7 +41,7 @@ $d = 0;
 					while ($item = mysql_fetch_assoc($Accompagnement)) {
 						$a += 1;
 						?>
-						<input type='text' name='Accompagnement<?php echo($a);?>' placeholder='<?php echo($item['Nom']); ?>'<br>
+						<input type='text' name='Accompagnement<?php echo($a);?>' value='<?php echo($item['Nom']); ?>'<br>
 						<?php
 					}
 				?>
@@ -53,7 +53,7 @@ $d = 0;
 					while ($item = mysql_fetch_assoc($Dessert)) {
 						$d += 1;
 						?>
-						<input type='text' name='Dessert<?php echo($d);?>' placeholder='<?php echo($item['Nom']); ?>'<br>
+						<input type='text' name='Dessert<?php echo($d);?>' value='<?php echo($item['Nom']); ?>'<br>
 						<?php
 					}
 				?>

@@ -7,7 +7,7 @@ $NextWednesday = mondayWednesday($NextMonday);
 $NextThursday = mondayThursday($NextMonday);
 $NextFriday = mondayFriday($NextMonday);
 ?>
-<form action="/page/User/traitementReservation.php" method="POST">
+<form action="page/User/traitementReservation.php" method="POST">
 	<table class="center">
 		<tr>
 			<td></td>
