@@ -390,31 +390,31 @@ $NextFriday = mondayFriday($NextMonday);
 		<td>
 			<?php
 				$res = returnNmbReservation($Monday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($Tuesday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($Wednesday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($Thursday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($Friday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 	</tr>
@@ -792,31 +792,31 @@ $NextFriday = mondayFriday($NextMonday);
 		<td>
 			<?php
 				$res = returnNmbReservation($NextMonday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($NextTuesday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($NextWednesday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($NextThursday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 		<td>
 			<?php
 				$res = returnNmbReservation($NextFriday);
-				echo($res);
+				echo($res['multi']);
 			?>
 		</td>
 	</tr>

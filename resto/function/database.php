@@ -191,16 +191,19 @@ function returnNombreMS($date)
 // REnvoie le nombre de reservation total dans une journée
 function returnNmbReservation($date)
 {
-	$sql = "SELECT * FROM reservation WHERE jour='".$date."'";
+	$sql = "SELECT sum(Multiplicateur) as multi FROM reservation WHERE jour='".$date."'";
 	$res = mysql_query($sql) or die (mysql_error());
-	$ret = mysql_num_rows($res);
+	$ret = mysql_fetch_array($res);
 	return $ret;
 }
 
 // Renvoie les éléments pour permettre la synthèse RH
-function returnInfoUser()
+function returnInfoUser($date, $date1, $date2)
 {
-	$sql = "SELECT distinct Nom, Prenom, Etablissement ,(Select count(jour) from reservation where IdUtilisateur = Id) AS Nmb, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1) AS Inv FROM utilisateur";
+	$d1 = date('Y-m-d', strtotime($date));
+	$d2 = date('Y-m-d', strtotime($date1));
+	$d3 = date('Y-m-d', strtotime($date2));
+	$sql = "SELECT distinct Nom, Prenom, Etablissement ,(Select count(jour) from reservation where IdUtilisateur = Id) AS Nmb, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1) AS Inv FROM utilisateur where '".$d1."' BETWEEN '".$d2."' and '".$d3."'";
 	$res = mysql_query($sql) or die (mysql_error());
 	return $res;
 }

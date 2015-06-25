@@ -3,7 +3,10 @@ require_once('/function/database.php');
 
 $Id = $_SESSION['Id'];
 
-$infos = returnInfoUser();
+$date = dateAct();
+$dateDebutMois = date('Y-m-d',strtotime('first day of this month'));
+$dateFinMois = date('Y-m-d',strtotime('last day of this month'));
+$infos = returnInfoUser($date, $dateDebutMois, $dateFinMois);
 $nmbSiege = personneParEtablissement("Siege");
 ?>
 

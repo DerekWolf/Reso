@@ -3,7 +3,7 @@ require_once('/function/database.php');
 
 $NextMonday = nextMonday();
 $NextTuesday = mondayTuesday($NextMonday);
-echo $NextWednesday = mondayWednesday($NextMonday);
+$NextWednesday = mondayWednesday($NextMonday);
 $NextThursday = mondayThursday($NextMonday);
 $NextFriday = mondayFriday($NextMonday);
 

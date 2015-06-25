@@ -26,7 +26,7 @@ $NextFriday = mondayFriday($NextMonday);
 		  frame.submit();
 		}
 </script>
-<div class="left">
+<div class="center">
 	<form action="traitementReservation.php" method="POST">
 		<table class="center">
 			<tr>
