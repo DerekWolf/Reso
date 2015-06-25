@@ -12,33 +12,26 @@ session_start();
 
 $connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
 mysql_select_db('menu', $connect);
+mysql_query("SET NAMES 'utf8'");
 
-echo ($id = $_SESSION["Id"]);
-echo ($Ent = $_POST['ENT']);
-echo ($Via = $_POST['VIA']);
-echo ($Acc = $_POST['ACC']);
+$id = $_SESSION["Id"];
+$Ent = mysql_real_escape_string($_POST['ENT']);
+$Via = mysql_real_escape_string($_POST['VIA']);
+$Acc = mysql_real_escape_string($_POST['ACC']);
 
 if(!isset($_POST['FRO']))
-	{ $Fro = 0;}
-else{ $Fro = 1;};
+	{ $Fro = "oui";}
+else{ $Fro = "non";};
 
-echo ($Des = $_POST['DES']);
-echo ($Date = $_POST['date']);
+$Des = mysql_real_escape_string($_POST['DES']);
+$Inv = $_POST['INV'] + 1;
 
-$update = "UPDATE `reservation` SET `Entre` = '".$Ent."', `Viande` = '".$Via."', Accompagnement = '".$Acc."', Fromage = '".$Fro."', Dessert ='".$Des."' WHERE IdUtilisateur = '".$id."' AND Jour = '".$Date."'";
+$Date = $_POST['date'];
+
+$update = "UPDATE `reservation` SET `Entre` = '".$Ent."', `Viande` = '".$Via."', Accompagnement = '".$Acc."', Fromage = '".$Fro."', Dessert ='".$Des."', Multiplicateur = '".$Inv."' WHERE IdUtilisateur = '".$id."' AND Jour = '".$Date."'";
 mysql_query($update) or die('Erreur lors de l\'ajout en base de donnés');
 mysql_close();
 
-function checkFromage($var)
-{
-	if(!isset($var))
-	{
-		return 0;
-	}else{
-		return 1;
-	}
-}
-
 echo "Reservation mis à jour.";
 ?>
-<input type="button" onclick="refreshParent()" value="Continuer">
+<input type="button" class="btn btn-default" onclick="refreshParent()" value="Continuer">

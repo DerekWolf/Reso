@@ -76,5 +76,5 @@
 			<td><input type="text" name="Des2Ven" required></td>
 		</tr>
 	</table>
-	<input type="submit" value="Ajouter nouveau menu">
+	<input type="submit" class="btn btn-default" value="Ajouter nouveau menu">
 </form>

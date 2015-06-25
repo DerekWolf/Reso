@@ -1,5 +1,6 @@
 <?php
-require_once('../../function/database.php');
+require_once("../../function/database.php");
+connect();
 
 $date = $_GET['date'];
 
@@ -59,7 +60,10 @@ $d = 0;
 				?>
 			<input type="hidden" name="date" value=<?php echo $date; ?>>
 			<hr>
-			<input type="submit" value="Valider">
+			<input class="btn btn-default" type="submit" value="Valider">
 			</p>
 	</div>
 </form>
+<?php
+deconnect();
+?>

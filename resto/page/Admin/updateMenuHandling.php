@@ -15,18 +15,18 @@ mysql_select_db('menu', $connect);
 
 $id = $_SESSION["Id"];
 
-echo ($Ent1 = mysql_real_escape_string($_POST['Entree1']));
-echo ($Ent2 = mysql_real_escape_string($_POST['Entree2']));
-echo ($Ent3 = mysql_real_escape_string($_POST['Entree3']));
+$Ent1 = mysql_real_escape_string($_POST['Entree1']);
+$Ent2 = mysql_real_escape_string($_POST['Entree2']);
+$Ent3 = mysql_real_escape_string($_POST['Entree3']);
 
-echo ($Via1 = mysql_real_escape_string($_POST['Viande1']));
-echo ($Via2 = mysql_real_escape_string($_POST['Viande2']));
+$Via1 = mysql_real_escape_string($_POST['Viande1']);
+$Via2 = mysql_real_escape_string($_POST['Viande2']);
 
-echo ($Acc1 = mysql_real_escape_string($_POST['Accompagnement1']));
-echo ($Acc2 = mysql_real_escape_string($_POST['Accompagnement2']));
+$Acc1 = mysql_real_escape_string($_POST['Accompagnement1']);
+$Acc2 = mysql_real_escape_string($_POST['Accompagnement2']);
 
-echo ($Des1 = mysql_real_escape_string($_POST['Dessert1']));
-echo ($Des2 = mysql_real_escape_string($_POST['Dessert2']));
+$Des1 = mysql_real_escape_string($_POST['Dessert1']);
+$Des2 = mysql_real_escape_string($_POST['Dessert2']);
 
 $Date = $_POST['date'];
 

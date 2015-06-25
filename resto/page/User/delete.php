@@ -19,4 +19,4 @@ mysql_query($delete) or die('Erreur lors de la requete');
 mysql_close();
 
 ?>
-<input type="button" onclick="refreshParent()" value="Continuer">
+<input class="btn btn-default" type="button" onclick="refreshParent()" value="Continuer">

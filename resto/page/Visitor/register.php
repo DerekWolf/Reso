@@ -30,10 +30,10 @@ if(!isset($_POST['name']) || empty($_POST['name']))
 	</form>
 <?php
 }else{
-	$nom = $_POST['name'];
-	$prenom = $_POST['firstName'];
-	$mdp = $_POST['mdp'];
-	$etablissement= $_POST['etablissement'];
+	$nom = mysql_real_escape_string($_POST['name']);
+	$prenom = mysql_real_escape_string($_POST['firstName']);
+	$mdp = mysql_real_escape_string($_POST['mdp']);
+	$etablissement= mysql_real_escape_string($_POST['etablissement']);
 	addUser($nom, $prenom, $mdp, $etablissement);
 ?>
 	<h1>Inscription terminée</h1>

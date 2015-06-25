@@ -39,42 +39,37 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		}
 </script>
 
-<section style="float : left">
+<section class="section75">
 	<section>
-		<div style="display: inline-block" width="20%">
+		<div style="display: inline-block">
 		<p class="important">
 			<?php
 			echo("<br>____________________");
-			echo("<br>Entrée");
-			echo("<br>Viande");
-			echo("<br>Accompagnement");
-			echo("<br>Fromage");
-			echo("<br>Dessert<br>");
+			echo("<br>Entrée :");
+			echo("<br>Viande :");
+			echo("<br>Accompagnement :");
+			echo("<br>Fromage :");
+			echo("<br>Dessert :");
+			echo("<br>Menu Salade :");
+			echo("<br>Nombre d'invité :<br>");
 			echo("<br>");
 			echo("<br>");
 			?>
 		</p>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 
 			echo $date1 = date("d-m-Y", strtotime($Monday));
-			echo ("<br>____________________");
-			if(empty($itemsMardi))
+			echo ("<br>_________________");
+			if(empty($itemsLundi))
 			{
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsLundi as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -94,7 +89,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($Tuesday));
@@ -104,14 +99,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsMardi as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -130,7 +118,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($Wednesday));
@@ -140,14 +128,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsMercredi as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -166,7 +147,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($Thursday));
@@ -176,14 +157,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsJeudi as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -202,7 +176,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($Friday));
@@ -212,14 +186,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsVendredi as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -246,13 +213,14 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		<p class="important">
 			<?php
 			echo("Date du jour :");
-			echo("<br>____________________");
-			echo("<br>Entrée");
-			echo("<br>Viande");
-			echo("<br>Accompagnement");
-			echo("<br>Fromage");
-			echo("<br>Dessert");
-			echo("<br>");
+			echo("<br>_______________");
+			echo("<br>Entrée :");
+			echo("<br>Viande :");
+			echo("<br>Accompagnement :");
+			echo("<br>Fromage :");
+			echo("<br>Dessert :");
+			echo("<br>Menu Salade :");
+			echo("<br>Nombre d'invité :");
 			echo("<br>");
 			echo("<br>");
 			?>
@@ -269,14 +237,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsLundi2 as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -305,14 +266,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsMardi2 as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -341,14 +295,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsMercredi2 as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -367,7 +314,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($NextThursday));
@@ -377,14 +324,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsJeudi2 as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -403,7 +343,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 		</form>
 	</div>
 
-	<div style="display: inline-block" width="20%">
+	<div style="display: inline-block">
 		<p style="text-align: center">
 			<?php
 			echo $date1 = date("d-m-Y", strtotime($NextFriday));
@@ -413,14 +353,7 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 				echo("<br>Pas de réservation.");
 			}else{
 				foreach($itemsVendredi2 as $item) {
-					if($item == "1")
-					{
-						echo ("<br>Oui");
-					}elseif ($item == "0") {
-						echo ("<br>Non");
-					}else{
-						echo ("<br>".$item."");
-					}
+					echo ("<br>".$item."");
 				}
 			}
 			?>
@@ -442,7 +375,9 @@ $itemsVendredi2 = voirReservation($Id, $NextFriday);
 </section>
 
 <br>
-
-	<iframe id="frame" src="" style="float: right">
-		<p>Your browser does not support iframes.</p>
-	</iframe>
+	<section class="section25">
+		<iframe id="frame" src="" style="float: right">
+			<p>Your browser does not support iframes.</p>
+		</iframe>
+	</section>
+	

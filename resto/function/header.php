@@ -1,11 +1,13 @@
 <?php
 	session_start();
+	require_once('/function/database.php');
+	connect();
 ?>
 <!DOCTYPE html> 
 	<html>
 	<head>
 		<script type="text/javascript"></script>
-		<meta charset="UTF-8">
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="./asset/css/bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="./asset/css/bootflat/css/bootflat.min.css">
 		<link rel="stylesheet" type="text/css" href="./asset/css/style.css">

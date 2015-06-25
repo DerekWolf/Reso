@@ -3,7 +3,7 @@ require_once('/function/database.php');
 
 $NextMonday = nextMonday();
 $NextTuesday = mondayTuesday($NextMonday);
-$NextWednesday = mondayWednesday($NextMonday);
+echo $NextWednesday = mondayWednesday($NextMonday);
 $NextThursday = mondayThursday($NextMonday);
 $NextFriday = mondayFriday($NextMonday);
 
@@ -21,11 +21,13 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 	<p class="important">
 		<?php
 		echo("<br>____________________");
-		echo("<br>Entrée");
-		echo("<br>Viande");
-		echo("<br>Accompagnement");
-		echo("<br>Fromage");
-		echo("<br>Dessert");
+		echo("<br>Entrée :");
+		echo("<br>Viande :");
+		echo("<br>Accompagnement :");
+		echo("<br>Fromage :");
+		echo("<br>Dessert :");
+		echo("<br>Menu Salade :");
+		echo("<br>Nombre'dinvité :");
 		?>
 	</p>
 </div>
@@ -41,14 +43,7 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 			echo("<br>Pas de réservation.");
 		}else{
 			foreach($itemsLundi as $item) {
-				if($item == "1")
-				{
-					echo ("<br>Oui");
-				}elseif ($item == "0") {
-					echo ("<br>Non");
-				}else{
-					echo ("<br>".$item."");
-				}
+				echo ("<br>".$item."");
 			}
 		}
 		?>
@@ -65,14 +60,7 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 			echo("<br>Pas de réservation.");
 		}else{
 			foreach($itemsMardi as $item) {
-				if($item == "1")
-				{
-					echo ("<br>Oui");
-				}elseif ($item == "0") {
-					echo ("<br>Non");
-				}else{
-					echo ("<br>".$item."");
-				}
+				echo ("<br>".$item."");
 			}
 		}
 		?>
@@ -89,14 +77,7 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 			echo("<br>Pas de réservation.");
 		}else{
 			foreach($itemsMercredi as $item) {
-				if($item == "1")
-				{
-					echo ("<br>Oui");
-				}elseif ($item == "0") {
-					echo ("<br>Non");
-				}else{
-					echo ("<br>".$item."");
-				}
+				echo ("<br>".$item."");
 			}
 		}
 		?>
@@ -113,14 +94,7 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 			echo("<br>Pas de réservation.");
 		}else{
 			foreach($itemsJeudi as $item) {
-				if($item == "1")
-				{
-					echo ("<br>Oui");
-				}elseif ($item == "0") {
-					echo ("<br>Non");
-				}else{
-					echo ("<br>".$item."");
-				}
+				echo ("<br>".$item."");
 			}
 		}
 		?>
@@ -137,14 +111,7 @@ $itemsVendredi = voirReservation($Id, $NextFriday);
 			echo("<br>Pas de réservation.");
 		}else{
 			foreach($itemsVendredi as $item) {
-				if($item == "1")
-				{
-					echo ("<br>Oui");
-				}elseif ($item == "0") {
-					echo ("<br>Non");
-				}else{
-					echo ("<br>".$item."");
-				}
+				echo ("<br>".$item."");
 			}
 		}
 		?>
