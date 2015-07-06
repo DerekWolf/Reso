@@ -75,7 +75,7 @@ $date = $_GET['date'];
 			</tr>
 			<tr>
 				<td>Invité :</td>
-				<td><input type="number" name="INV" step="1" value="0"></td>
+				<td><input type="number" name="INV" step="1" value="0" min="0"></td>
 			</tr>
 		</table>
 			<input type="hidden" name="date" value=<?php echo $date; ?>>

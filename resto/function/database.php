@@ -128,10 +128,9 @@ function returnNomPlat($type, $date)
 function voirReservation($id, $date)
 {
 	$jour = date('Y-m-d', strtotime($date));
-	$sql = "SELECT distinct Entre , Viande, Accompagnement, Fromage, Dessert, MenuSalade, Multiplicateur from `reservation` WHERE IdUtilisateur = '".$id."' and Jour = '".$date."'";
+	$sql = "SELECT distinct Entre , Viande, Accompagnement, Fromage, Dessert, MenuSalade, (Multiplicateur - 1) from `reservation` WHERE IdUtilisateur = '".$id."' and Jour = '".$date."'";
 	$res = mysql_query($sql) or die (mysql_error());
-	$ret = mysql_fetch_assoc($res);
-	return $ret;
+	return $res;
 }
 
 // Renvoie le nombre de fois ou une entrée à été commandés
@@ -232,4 +231,13 @@ function checkToAutorise($dateToCheck)
 		$res = false;
 		return $res;
 	}
+}
+
+
+// ============= Tache planifiée ==============
+function notReserve()
+{
+	$sql = "SELECT DISTINCT * FROM utilisateur WHERE Id NOT IN(SELECT DISTINCT IdUtilisateur from reservation)";
+	$res = mysql_query($sql) or die (mysql_error());
+	return $res;
 }

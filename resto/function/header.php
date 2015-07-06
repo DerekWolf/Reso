@@ -38,7 +38,7 @@
 					echo ('<li><a href="index.php?page=10">Réserver</a></li>
 							<li><a href="index.php?page=11">Semaine courrante</a></li>
 							<li><a href="index.php?page=12">Semaine prochaine</a></li>
-							<li><a href="index.php?page=13">Modifier ses réservation</a></li>
+							<li><a href="index.php?page=13">Modifier ses réservations</a></li>
 							<li><a href="index.php?page=42">Se déconnecter</a></li>
 						');
 				}elseif($_SESSION["statut"] == "Administrateur"){

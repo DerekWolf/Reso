@@ -2,35 +2,60 @@
 <!--
 function refreshParent() {
   window.parent.location.href = window.parent.location.href;
- 
 }
 //-->
 </script>
 
 <?php
 session_start();
-
-$connect = mysql_connect('localhost', 'root', '') or die("Erreur de connexion au serveur.");
-mysql_select_db('menu', $connect);
-mysql_query("SET NAMES 'utf8'");
+require_once("../../function/database.php");
+connect();
 
 $id = $_SESSION["Id"];
-$Ent = mysql_real_escape_string($_POST['ENT']);
-$Via = mysql_real_escape_string($_POST['VIA']);
-$Acc = mysql_real_escape_string($_POST['ACC']);
+$Date = $_POST['date'];
+
+$items = mysql_fetch_array(voirReservation($id, $Date));
+
+
+if($_POST['ENT'] != "-"){
+	$Ent = mysql_real_escape_string($_POST['ENT']);
+}else{
+	$Ent = $items['Entre'];
+}
+
+if($_POST['VIA'] != "-"){
+	$Via = mysql_real_escape_string($_POST['VIA']);
+}else{
+	$Via = $items['Viande'];
+}
+
+if($_POST['ACC'] != "-"){
+	$Acc = mysql_real_escape_string($_POST['ACC']);
+}else{
+	$Acc = $items['Accompagnement'];
+}
 
 if(!isset($_POST['FRO']))
-	{ $Fro = "oui";}
-else{ $Fro = "non";};
+	{ $Fro = "non";}
+else{ $Fro = "oui";};
 
-$Des = mysql_real_escape_string($_POST['DES']);
-$Inv = $_POST['INV'] + 1;
 
-$Date = $_POST['date'];
+if($_POST['DES'] != "-"){
+	$Des = mysql_real_escape_string($_POST['DES']);
+}else{
+	$Des = $items['Dessert'];
+}
+
+if($_POST['DES'] != "0"){
+	$Inv = $_POST['INV'] + 1;
+}else{
+	$Inv = $items['Multiplicateur'];
+}
 
 $update = "UPDATE `reservation` SET `Entre` = '".$Ent."', `Viande` = '".$Via."', Accompagnement = '".$Acc."', Fromage = '".$Fro."', Dessert ='".$Des."', Multiplicateur = '".$Inv."' WHERE IdUtilisateur = '".$id."' AND Jour = '".$Date."'";
 mysql_query($update) or die('Erreur lors de l\'ajout en base de donnés');
-mysql_close();
+
+deconnect();
 
 echo "Reservation mis à jour.";
 ?>

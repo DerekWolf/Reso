@@ -97,7 +97,7 @@ $NextFriday = mondayFriday($NextMonday);
 			<td ><input type="checkbox" name="VEN_MSAL" id="MenuSaladeV" onclick="checkVen()"></td>
 		</tr>
 		<tr>
-			<th>Entré</th>
+			<th>Entrée</th>
 			<td>
 				<SELECT  class="form-control" name="LUN_ENT" id="LUN_ENT" size="1">
 				<option>-</option>

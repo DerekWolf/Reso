@@ -10,11 +10,11 @@ $NextFriday = mondayFriday($NextMonday);
 
 $Id = $_SESSION['Id'];
 
-$itemsLundi = voirReservation($Id, $NextMonday);
-$itemsMardi = voirReservation($Id, $NextTuesday);
-$itemsMercredi = voirReservation($Id, $NextWednesday);
-$itemsJeudi = voirReservation($Id, $NextThursday);
-$itemsVendredi = voirReservation($Id, $NextFriday);
+$itemsLundi = mysql_fetch_assoc(voirReservation($Id, $NextMonday));
+$itemsMardi = mysql_fetch_assoc(voirReservation($Id, $NextTuesday));
+$itemsMercredi = mysql_fetch_assoc(voirReservation($Id, $NextWednesday));
+$itemsJeudi = mysql_fetch_assoc(voirReservation($Id, $NextThursday));
+$itemsVendredi = mysql_fetch_assoc(voirReservation($Id, $NextFriday));
 
 ?>
 <div style="display: inline-block" width="20%">

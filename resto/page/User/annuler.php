@@ -9,11 +9,11 @@ $Wednesday = mondayWednesday($Monday);
 $Thursday = mondayThursday($Monday);
 $Friday = mondayFriday($Monday);
 
-$itemsLundi = voirReservation($Id, $Monday);
-$itemsMardi = voirReservation($Id, $Tuesday);
-$itemsMercredi = voirReservation($Id, $Wednesday);
-$itemsJeudi = voirReservation($Id, $Thursday);
-$itemsVendredi = voirReservation($Id, $Friday);
+$itemsLundi = mysql_fetch_assoc(voirReservation($Id, $Monday));
+$itemsMardi = mysql_fetch_assoc(voirReservation($Id, $Tuesday));
+$itemsMercredi = mysql_fetch_assoc(voirReservation($Id, $Wednesday));
+$itemsJeudi = mysql_fetch_assoc(voirReservation($Id, $Thursday));
+$itemsVendredi = mysql_fetch_assoc(voirReservation($Id, $Friday));
 
 $NextMonday = nextMonday();
 $NextTuesday = mondayTuesday($NextMonday);
@@ -21,11 +21,11 @@ $NextWednesday = mondayWednesday($NextMonday);
 $NextThursday = mondayThursday($NextMonday);
 $NextFriday = mondayFriday($NextMonday);
 
-$itemsLundi2 = voirReservation($Id, $NextMonday);
-$itemsMardi2 = voirReservation($Id, $NextTuesday);
-$itemsMercredi2 = voirReservation($Id, $NextWednesday);
-$itemsJeudi2 = voirReservation($Id, $NextThursday);
-$itemsVendredi2 = voirReservation($Id, $NextFriday);
+$itemsLundi2 = mysql_fetch_assoc(voirReservation($Id, $NextMonday));
+$itemsMardi2 = mysql_fetch_assoc(voirReservation($Id, $NextTuesday));
+$itemsMercredi2 = mysql_fetch_assoc(voirReservation($Id, $NextWednesday));
+$itemsJeudi2 = mysql_fetch_assoc(voirReservation($Id, $NextThursday));
+$itemsVendredi2 = mysql_fetch_assoc(voirReservation($Id, $NextFriday));
 ?>
 
 <script type="text/javascript">

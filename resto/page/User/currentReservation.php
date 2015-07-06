@@ -9,11 +9,11 @@ $Wednesday = mondayWednesday($Monday);
 $Thursday = mondayThursday($Monday);
 $Friday = mondayFriday($Monday);
 
-$itemsLundi = voirReservation($Id, $Monday);
-$itemsMardi = voirReservation($Id, $Tuesday);
-$itemsMercredi = voirReservation($Id, $Wednesday);
-$itemsJeudi = voirReservation($Id, $Thursday);
-$itemsVendredi = voirReservation($Id, $Friday);
+$itemsLundi = mysql_fetch_assoc(voirReservation($Id, $Monday));
+$itemsMardi = mysql_fetch_assoc(voirReservation($Id, $Tuesday));
+$itemsMercredi = mysql_fetch_assoc(voirReservation($Id, $Wednesday));
+$itemsJeudi = mysql_fetch_assoc(voirReservation($Id, $Thursday));
+$itemsVendredi = mysql_fetch_assoc(voirReservation($Id, $Friday));
 ?>
 
 <div style="display: inline-block" width="20%">
