@@ -26,7 +26,7 @@ $itemsVendredi = mysql_fetch_assoc(voirReservation($Id, $NextFriday));
 		echo("<br>Accompagnement :");
 		echo("<br>Fromage :");
 		echo("<br>Dessert :");
-		echo("<br>Menu Salade :");
+		echo("<br>Salade :");
 		echo("<br>Nombre'dinvité :");
 		?>
 	</p>

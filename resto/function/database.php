@@ -124,11 +124,27 @@ function returnNomPlat($type, $date)
 	return $reponse;
 }
 
+function returnSalade($type, $date)
+{
+	$jour = date('Y-m-d', strtotime($date));
+	$sql = "SELECT Nom, (select Composition from Salade where Name = Nom) AS Compo from `plat` WHERE Type = '$type' and Jour = '$jour'";
+	$reponse = mysql_query($sql) or die (mysql_error());
+	$res = mysql_fetch_assoc($reponse);
+	return $res;
+}
+
+function allSalade()
+{
+	$sql = "SELECT distinct Name from `salade`";
+	$reponse = mysql_query($sql) or die (mysql_error());
+	return $reponse;
+}
+
 // Renvoie toutes les informations relatives à une reservation en fonction d'une date et d'un Utilisateur
 function voirReservation($id, $date)
 {
 	$jour = date('Y-m-d', strtotime($date));
-	$sql = "SELECT distinct Entre , Viande, Accompagnement, Fromage, Dessert, MenuSalade, (Multiplicateur - 1) from `reservation` WHERE IdUtilisateur = '".$id."' and Jour = '".$date."'";
+	$sql = "SELECT distinct Entre , Viande, Accompagnement, Fromage, Dessert, Salade, (Multiplicateur - 1) as Multi from `reservation` WHERE IdUtilisateur = '".$id."' and Jour = '".$date."'";
 	$res = mysql_query($sql) or die (mysql_error());
 	return $res;
 }
@@ -181,7 +197,7 @@ function returnNombreDessert($date, $nom)
 //Renvoie le nombre de fois ou le menu salade a été commander
 function returnNombreMS($date)
 {
-	$sql = "SELECT sum(Multiplicateur) as multi FROM reservation WHERE Jour='".$date."' and MenuSalade='oui'";
+	$sql = "SELECT sum(Multiplicateur) as multi FROM reservation WHERE Jour='".$date."' and Salade<>'-'";
 	$res = mysql_query($sql) or die (mysql_error());
 	$ret = mysql_fetch_assoc($res);
 	return $ret;
@@ -197,12 +213,12 @@ function returnNmbReservation($date)
 }
 
 // Renvoie les éléments pour permettre la synthèse RH
-function returnInfoUser($date, $date1, $date2)
+function returnInfoUser()
 {
-	$d1 = date('Y-m-d', strtotime($date));
-	$d2 = date('Y-m-d', strtotime($date1));
-	$d3 = date('Y-m-d', strtotime($date2));
-	$sql = "SELECT distinct Nom, Prenom, Etablissement ,(Select count(jour) from reservation where IdUtilisateur = Id) AS Nmb, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1) AS Inv FROM utilisateur where '".$d1."' BETWEEN '".$d2."' and '".$d3."'";
+	$d1 = date('Y-m-d');
+	$d2 = date('Y-m-d',strtotime('first day of this month'));
+	$d3 = date('Y-m-d',strtotime('last day of this month'));
+	$sql = "SELECT distinct Nom, Prenom, Etablissement , (Select count(jour) from reservation where IdUtilisateur = Id and Jour BETWEEN '".$d2."' AND '".$d3."') AS Nmb, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1 and Jour BETWEEN '".$d2."' AND '".$d3."' ) AS Inv FROM utilisateur";
 	$res = mysql_query($sql) or die (mysql_error());
 	return $res;
 }

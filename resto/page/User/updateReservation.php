@@ -16,6 +16,16 @@ $Date = $_POST['date'];
 
 $items = mysql_fetch_array(voirReservation($id, $Date));
 
+if(!isset($_POST['SAL']))
+{ 
+	$Sal = "-";
+	$Via = mysql_real_escape_string($_POST['VIA']);
+	$Acc = mysql_real_escape_string($_POST['ACC']);
+}else{
+	$Sal = "oui";
+	$Via = "-";
+	$Acc = "-";
+};
 
 if($_POST['ENT'] != "-"){
 	$Ent = mysql_real_escape_string($_POST['ENT']);
@@ -46,10 +56,10 @@ if($_POST['DES'] != "-"){
 	$Des = $items['Dessert'];
 }
 
-if($_POST['DES'] != "0"){
+if($_POST['INV'] > "0"){
 	$Inv = $_POST['INV'] + 1;
 }else{
-	$Inv = $items['Multiplicateur'];
+	$Inv = $items['Multi'] + 1;
 }
 
 $update = "UPDATE `reservation` SET `Entre` = '".$Ent."', `Viande` = '".$Via."', Accompagnement = '".$Acc."', Fromage = '".$Fro."', Dessert ='".$Des."', Multiplicateur = '".$Inv."' WHERE IdUtilisateur = '".$id."' AND Jour = '".$Date."'";

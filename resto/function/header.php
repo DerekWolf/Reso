@@ -43,6 +43,7 @@
 						');
 				}elseif($_SESSION["statut"] == "Administrateur"){
 					echo ('<li><a href="index.php?page=20">Ajouter une semaine</a></li>
+							<li><a href="index.php?page=24">Ajouter une salade</a></li>
 							<li><a href="index.php?page=21">Modifier les menus</a></li>
 							<li><a href="index.php?page=22">Statistique des repas</a></li>
 							<li><a href="index.php?page=23">Statistique des utilisateurs</a></li>

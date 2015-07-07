@@ -10,6 +10,41 @@ $dateMercredi = $_POST['dateMercredi'];
 $dateJeudi = $_POST['dateJeudi'];
 $dateVendredi = $_POST['dateVendredi'];
 
+if(!isset($_POST['Sal1Lun']))
+{
+	$salLun = "-";
+}else{
+	$salLun = mysql_real_escape_string($_POST['Sal1Lun']);
+}
+
+if(!isset($_POST['Sal1Mar']))
+{
+	$salMar = "-";
+}else{
+	$salMar = mysql_real_escape_string($_POST['Sal1Mar']);
+}
+
+if(!isset($_POST['Sal1Mer']))
+{
+	$salMer = "-";
+}else{
+	$salMer = mysql_real_escape_string($_POST['Sal1Mer']);
+}
+
+if(!isset($_POST['Sal1Jeu']))
+{
+	$salJeu = "-";
+}else{
+	$salJeu = mysql_real_escape_string($_POST['Sal1Jeu']);
+}
+
+if(!isset($_POST['salVen']))
+{
+	$salVen = "-";
+}else{
+	$salVen = mysql_real_escape_string($_POST['salVen']);
+}
+
 $ent1Lun = mysql_real_escape_string($_POST['Ent1Lun']);
 $ent1Mar = mysql_real_escape_string($_POST['Ent1Mar']);
 $ent1Mer = mysql_real_escape_string($_POST['Ent1Mer']);
@@ -64,6 +99,12 @@ $des2Mer = mysql_real_escape_string($_POST['Des2Mer']);
 $des2Jeu = mysql_real_escape_string($_POST['Des2Jeu']);
 $des2Ven = mysql_real_escape_string($_POST['Des2Ven']);
 
+$reqS1 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Salade', '$salLun', 'S1', '$dateLundi')";
+$reqS2 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Salade', '$salMar', 'S1', '$dateMardi')";
+$reqS3 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Salade', '$salMer', 'S1', '$dateMercredi')";
+$reqS4 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Salade', '$salJeu', 'S1', '$dateJeudi')";
+$reqS5 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Salade', '$salVen', 'S1', '$dateVendredi')";
+
 $req1 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Entree', '$ent1Lun', 'E1', '$dateLundi')";
 $req2 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Entree', '$ent1Mar', 'E1', '$dateMardi')";
 $req3 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Entree', '$ent1Mer', 'E1', '$dateMercredi')";
@@ -117,6 +158,12 @@ $req42 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Dessert', '$des2Mar', 'D
 $req43 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Dessert', '$des2Mer', 'D2', '$dateMercredi')";
 $req44 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Dessert', '$des2Jeu', 'D2', '$dateJeudi')";
 $req45 = "INSERT INTO plat(Type, Nom, Id, Jour) VALUES('Dessert', '$des2Ven', 'D2', '$dateVendredi')";
+
+mysql_query($reqS1) or die('Erreur lors de l\'ajout en base de donnés 1');
+mysql_query($reqS2) or die('Erreur lors de l\'ajout en base de donnés 2');
+mysql_query($reqS3) or die('Erreur lors de l\'ajout en base de donnés 3');
+mysql_query($reqS4) or die('Erreur lors de l\'ajout en base de donnés 4');
+mysql_query($reqS5) or die('Erreur lors de l\'ajout en base de donnés 5');
 
 mysql_query($req1) or die('Erreur lors de l\'ajout en base de donnés 1');
 mysql_query($req2) or die('Erreur lors de l\'ajout en base de donnés 2');

@@ -1,3 +1,17 @@
+<script type="text/javascript">
+	function check()
+	{
+		if(document.getElementById('Salade').checked)
+		{
+			document.getElementById('VIA').disabled = 'disabled';
+			document.getElementById('ACC').disabled = 'disabled';
+		}else{
+			document.getElementById('VIA').disabled = '';
+			document.getElementById('ACC').disabled = '';
+		}
+	}
+</script>
+
 <?php
 require_once("../../function/database.php");
 connect();
@@ -9,9 +23,19 @@ $date = $_GET['date'];
 		<p style="text-align: center">
 		<table>
 			<tr>
+				<td>Salade :</td>
+				<td >
+					<?php $Salade = returnSalade("Salade", $date); ?>
+					<p title="<?php echo $Salade['Compo']; ?>">
+						<input type="checkbox" name="SAL" id="Salade" onclick="check()">
+						<?php echo ($Salade['Nom']) ?>
+					</p>
+				</td>
+			</tr>
+			<tr>
 				<td>Entree :</td>
 				<td>
-					<SELECT name="ENT" size="1">
+					<SELECT name="ENT" id="ENT" size="1">
 					<option>-</option>
 					<?php
 						$Entree = returnPlat("Entree", $date);
@@ -30,7 +54,7 @@ $date = $_GET['date'];
 			<tr>
 				<td>Viande :</td>
 				<td>
-					<SELECT name="VIA" size="1">
+					<SELECT name="VIA" id="VIA" size="1">
 						<option>-</option>
 						<?php
 							$Viande = returnPlat("Viande", $date);
@@ -44,7 +68,7 @@ $date = $_GET['date'];
 			<tr>
 				<td>Accompagnement </td>
 				<td>
-					<SELECT name="ACC" size="1">
+					<SELECT name="ACC" id="ACC" size="1">
 						<option>-</option>
 						<?php
 							$Accompagnement = returnPlat("Accompagnement", $date);
@@ -62,7 +86,7 @@ $date = $_GET['date'];
 			<tr>
 				<td>Dessert :</td>
 				<td>
-					<SELECT name="DES" size="1">
+					<SELECT name="DES" id="DES" size="1">
 						<option>-</option>
 						<?php
 							$Dessert = returnPlat("Dessert", $date);

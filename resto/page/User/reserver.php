@@ -3,11 +3,9 @@
 	{
 		if(document.getElementById('MenuSaladeL').checked)
 		{
-			document.getElementById('LUN_ENT').disabled = 'disabled';
 			document.getElementById('LUN_VIA').disabled = 'disabled';
 			document.getElementById('LUN_ACC').disabled = 'disabled';
 		}else{
-			document.getElementById('LUN_ENT').disabled = '';
 			document.getElementById('LUN_VIA').disabled = '';
 			document.getElementById('LUN_ACC').disabled = '';
 		}
@@ -17,11 +15,9 @@
 	{
 		if(document.getElementById('MenuSaladeMa').checked)
 		{
-			document.getElementById('MAR_ENT').disabled = 'disabled';
 			document.getElementById('MAR_VIA').disabled = 'disabled';
 			document.getElementById('MAR_ACC').disabled = 'disabled';
 		}else{
-			document.getElementById('MAR_ENT').disabled = '';
 			document.getElementById('MAR_VIA').disabled = '';
 			document.getElementById('MAR_ACC').disabled = '';
 		}
@@ -31,7 +27,6 @@
 	{
 		if(document.getElementById('MenuSaladeMe').checked)
 		{
-			document.getElementById('MER_ENT').disabled = 'disabled';
 			document.getElementById('MER_VIA').disabled = 'disabled';
 			document.getElementById('MER_ACC').disabled = 'disabled';
 		}else{
@@ -45,11 +40,9 @@
 	{
 		if(document.getElementById('MenuSaladeJ').checked)
 		{
-			document.getElementById('JEU_ENT').disabled = 'disabled';
 			document.getElementById('JEU_VIA').disabled = 'disabled';
 			document.getElementById('JEU_ACC').disabled = 'disabled';
 		}else{
-			document.getElementById('JEU_ENT').disabled = '';
 			document.getElementById('JEU_VIA').disabled = '';
 			document.getElementById('JEU_ACC').disabled = '';
 		}
@@ -59,15 +52,22 @@
 	{
 		if(document.getElementById('MenuSaladeV').checked)
 		{
-			document.getElementById('VEN_ENT').disabled = 'disabled';
 			document.getElementById('VEN_VIA').disabled = 'disabled';
 			document.getElementById('VEN_ACC').disabled = 'disabled';
 		}else{
-			document.getElementById('VEN_ENT').disabled = '';
 			document.getElementById('VEN_VIA').disabled = '';
 			document.getElementById('VEN_ACC').disabled = '';
 		}
 	}
+
+	function FrameSubmit(page) {
+		  // On recup le formulaire
+		  frame = document.getElementById('frame');
+		  // On change l'action
+		  frame.src = page;
+		  // Et on envoit le formulaire
+		  frame.submit();
+		}
 </script>
 <?php
 require_once('/function/database.php');
@@ -89,12 +89,32 @@ $NextFriday = mondayFriday($NextMonday);
 			<th >Vendredi</th>
 		</tr>
 		<tr>
-			<th>Menu Salade :</th>
-			<td ><input type="checkbox" name="LUN_MSAL" id="MenuSaladeL" onclick="checkLun()"></td>
-			<td ><input type="checkbox" name="MAR_MSAL" id="MenuSaladeMa" onclick="checkMar()"></td>
-			<td ><input type="checkbox" name="MER_MSAL" id="MenuSaladeMe" onclick="checkMer()"></td>
-			<td ><input type="checkbox" name="JEU_MSAL" id="MenuSaladeJ" onclick="checkJeu()"></td>
-			<td ><input type="checkbox" name="VEN_MSAL" id="MenuSaladeV" onclick="checkVen()"></td>
+			<th>Salade :</th>
+			<td >
+				<?php $Salade = returnSalade("Salade", $NextMonday); ?>
+				<input type="checkbox" name="LUN_MSAL" id="MenuSaladeL" onclick="checkLun()">
+				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']) ?></p>
+			</td>
+			<td >
+				<?php $Salade = returnSalade("Salade", $NextTuesday); ?>
+				<input type="checkbox" name="MAR_MSAL" id="MenuSaladeMa" onclick="checkMar()">
+				<p title="<?php echo ($Salade['Compo']); ?>"><?php echo ($Salade['Nom']); ?></p>
+			</td>
+			<td >
+				<?php $Salade = returnSalade("Salade", $NextWednesday); ?>
+				<input type="checkbox" name="MER_MSAL" id="MenuSaladeMe" onclick="checkMer()">
+				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+			</td>
+			<td >
+				<?php $Salade = returnSalade("Salade", $NextThursday); ?>
+				<input type="checkbox" name="JEU_MSAL" id="MenuSaladeJ" onclick="checkJeu()">
+				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+			</td>
+			<td >
+				<?php $Salade = returnSalade("Salade", $NextFriday); ?>
+				<input type="checkbox" name="VEN_MSAL" id="MenuSaladeV" onclick="checkVen()">
+				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+			</td>
 		</tr>
 		<tr>
 			<th>Entrée</th>
@@ -377,4 +397,3 @@ $NextFriday = mondayFriday($NextMonday);
 	</table>
 	<input class="btn btn-default" type="submit" value="Valider">
 </form>
-	

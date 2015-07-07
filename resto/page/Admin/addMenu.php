@@ -1,3 +1,14 @@
+<datalist id="salade">
+	<?php
+		$salades = allSalade();
+		while ($item = mysql_fetch_assoc($salades)) {
+			?>
+				<option value="<?php echo($item['Name']); ?>">
+			<?php
+		}
+	?>
+</datalist>
+
 <form action="page/Admin/addMenuHandling.php" method="POST">
 	<table class="center">
 		<tr>
@@ -7,6 +18,14 @@
 			<th>Mercredi <br> <input type="text" name="dateMercredi" placeholder="AAAA-MM-JJ" required></th>
 			<th>Jeudi <br> <input type="text" name="dateJeudi" placeholder="AAAA-MM-JJ" required></th>
 			<th>Vendredi <br> <input type="text" name="dateVendredi" placeholder="AAAA-MM-JJ" required></th>
+		</tr>
+		<tr>
+			<th>Salade :</th>
+			<td><input list="salade" name="Sal1Lun"></td>
+			<td><input list="salade" name="Sal1Mar"></td>
+			<td><input list="salade" name="Sal1Mer"></td>
+			<td><input list="salade" name="Sal1Jeu"></td>
+			<td><input list="salade" name="Sal1Ven"></td>
 		</tr>
 		<tr>
 			<th rowspan="3">Entrée</th>

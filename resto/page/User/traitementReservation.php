@@ -9,65 +9,55 @@ $id = $_SESSION["Id"];
 
 if(!isset($_POST['LUN_MSAL']))
 { 
-	$SalLun = "non";
-	$EntLun = mysql_real_escape_string($_POST['LUN_ENT']);
+	$SalLun = "-";
 	$ViaLun = mysql_real_escape_string($_POST['LUN_VIA']);
 	$AccLun = mysql_real_escape_string($_POST['LUN_ACC']);
 }else{
 	$SalLun = "oui";
-	$EntLun = "-";
 	$ViaLun = "-";
 	$AccLun = "-";
 };
 
 if(!isset($_POST['MAR_MSAL']))
 { 
-	$SalMar = "non";
-	$EntMar = mysql_real_escape_string($_POST['MAR_ENT']);
+	$SalMar = "-";
 	$ViaMar = mysql_real_escape_string($_POST['MAR_VIA']);
 	$AccMar = mysql_real_escape_string($_POST['MAR_ACC']);
 }else{
 	$SalMar = "oui";
-	$EntMar = "-";
 	$ViaMar = "-";
 	$AccMar = "-";
 };
 
 if(!isset($_POST['MER_MSAL']))
 { 
-	$SalMer = "non";
-	$EntMer = mysql_real_escape_string($_POST['MER_ENT']);
+	$SalMer = "-";
 	$ViaMer = mysql_real_escape_string($_POST['MER_VIA']);
 	$AccMer = mysql_real_escape_string($_POST['MER_ACC']);
 }else{
 	$SalMer = "oui";
-	$EntMer = "-";
 	$ViaMer = "-";
 	$AccMer = "-";
 };
 
 if(!isset($_POST['JEU_MSAL']))
 { 
-	$SalJeu = "non";
-	$EntJeu = mysql_real_escape_string($_POST['JEU_ENT']);
+	$SalJeu = "-";
 	$ViaJeu = mysql_real_escape_string($_POST['JEU_VIA']);
 	$AccJeu = mysql_real_escape_string($_POST['JEU_ACC']);
 }else{
 	$SalMar = "oui";
-	$EntMar = "-";
 	$ViaMar = "-";
 	$AccMar = "-";
 };
 
 if(!isset($_POST['VEN_MSAL']))
 { 
-	$SalVen = "non";
-	$EntVen = mysql_real_escape_string($_POST['VEN_ENT']);
+	$SalVen = "-";
 	$ViaVen = mysql_real_escape_string($_POST['VEN_VIA']);
 	$AccVen = mysql_real_escape_string($_POST['VEN_ACC']);
 }else{
 	$SalVen = "oui";
-	$EntVen = "-";
 	$ViaVen = "-";
 	$AccVen = "-";
 };

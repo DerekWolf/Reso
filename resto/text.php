@@ -42,6 +42,9 @@ switch($page){
 	case 23 : include("page/Admin/userStats.php");
 	break;
 
+	case 24 : include("page/Admin/addSalade.php");
+	break;
+
 	case 42 : include("page/commun/logout.php");
 	break;
 }

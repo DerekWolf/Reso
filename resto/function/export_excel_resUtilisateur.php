@@ -6,9 +6,11 @@
    // La suite est une simple requête php-mysql. On interroge la table utilisée dans l'exemple précédent. 
    $bdd = mysql_connect("localhost","root","");
    mysql_select_db(("menu"),$bdd);
+   $d2 = date('Y-m-d',strtotime('first day of this month'));
+   $d3 = date('Y-m-d',strtotime('last day of this month'));
    // notez la présence du caractère arobase (@) , en cas d'erreur, 
   // il empêche PHP d'écrire un message d'erreur sur le navigateur
-    $requete=@mysql_query("SELECT distinct Etablissement, Nom, Prenom, (Select count(jour) from reservation where IdUtilisateur = Id) AS Reservation, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1) AS Inv  FROM utilisateur where Etablissement <> 'Administration'");
+    $requete=@mysql_query("SELECT distinct Nom, Prenom, Etablissement , (Select count(jour) from reservation where IdUtilisateur = Id and Jour BETWEEN '".$d2."' AND '".$d3."') AS Nmb, (select sum(Multiplicateur - 1) from reservation where IdUtilisateur = Id and Multiplicateur > 1 and Jour BETWEEN '".$d2."' AND '".$d3."' ) AS Inv FROM utilisateur where Etablissement <> 'Administration'");
     // on vérifie le contenu de  la requête ;
     if (@mysql_numrows($requete) == 0) 
         {   // si elle est vide, on en informe l'utilisateur à l'aide d'un Javascript 
