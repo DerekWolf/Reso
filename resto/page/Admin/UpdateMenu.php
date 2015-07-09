@@ -1,5 +1,4 @@
 <?php
-require_once('/function/database.php');
 
 $Id = $_SESSION['Id'];
 

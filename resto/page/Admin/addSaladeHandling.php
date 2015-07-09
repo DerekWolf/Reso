@@ -5,7 +5,7 @@ require_once("../../function/database.php");
 connect();
 mysql_query("SET NAMES 'utf8'");
 
-$nom = $_POST['Nom'];
+$nom = mysql_real_escape_string($_POST['Nom']);
 $compo = mysql_real_escape_string($_POST['composition']);
 
 $sql = "INSERT INTO salade(Name, Composition) VALUES('$nom', '$compo')";

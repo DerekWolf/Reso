@@ -1,7 +1,6 @@
 <?php
-	require_once('/function/database.php');
 
-	$Id = $_SESSION['Id'];
+$Id = $_SESSION['Id'];
 
 	
 $Monday = currentMonday();
@@ -55,7 +54,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $Monday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($Monday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($Monday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -71,7 +70,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $Tuesday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($Tuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($Tuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -86,7 +85,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $Wednesday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($Wednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($Wednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -101,7 +100,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $Thursday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($Thursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($Thursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -116,7 +115,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $Friday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($Friday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($Friday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -134,7 +133,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $Monday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($Monday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($Monday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -149,7 +148,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $Tuesday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($Tuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($Tuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -164,7 +163,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $Wednesday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($Wednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($Wednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -179,7 +178,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $Thursday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($Thursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($Thursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -195,7 +194,7 @@ $NextFriday = mondayFriday($NextMonday);
 			
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($Friday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($Friday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -213,7 +212,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $Monday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($Monday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($Monday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -228,7 +227,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $Tuesday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($Tuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($Tuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -243,7 +242,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $Wednesday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($Wednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($Wednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -258,7 +257,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $Thursday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($Thursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($Thursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -273,7 +272,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $Friday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($Friday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($Friday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -314,7 +313,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $Monday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($Monday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($Monday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -329,7 +328,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $Tuesday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($Tuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($Tuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -344,7 +343,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $Wednesday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($Wednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($Wednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -359,7 +358,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $Thursday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($Thursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($Thursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -374,7 +373,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $Friday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($Friday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($Friday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -459,7 +458,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $NextMonday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($NextMonday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($NextMonday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -474,7 +473,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $NextTuesday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($NextTuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($NextTuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -489,7 +488,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $NextWednesday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($NextWednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($NextWednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -504,7 +503,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $NextThursday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($NextThursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($NextThursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -519,7 +518,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Entree = returnPlat("Entree", $NextFriday);
 			while ($plats = mysql_fetch_assoc($Entree)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreEntree($NextFriday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreEntree($NextFriday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -537,7 +536,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $NextMonday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($NextMonday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($NextMonday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -552,7 +551,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $NextTuesday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($NextTuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($NextTuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -567,7 +566,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $NextWednesday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($NextWednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($NextWednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -582,7 +581,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $NextThursday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($NextThursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($NextThursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -597,7 +596,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Viande = returnPlat("Viande", $NextFriday);
 			while ($plats = mysql_fetch_assoc($Viande)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreViande($NextFriday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreViande($NextFriday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -615,7 +614,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $NextMonday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($NextMonday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($NextMonday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -630,7 +629,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $NextTuesday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($NextTuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($NextTuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -645,7 +644,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $NextWednesday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($NextWednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($NextWednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -660,7 +659,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $NextThursday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($NextThursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($NextThursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -675,7 +674,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Accompagnement = returnPlat("Accompagnement", $NextFriday);
 			while ($plats = mysql_fetch_assoc($Accompagnement)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreAccompagnement($NextFriday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreAccompagnement($NextFriday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -716,7 +715,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $NextMonday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($NextMonday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($NextMonday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -731,7 +730,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $NextTuesday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($NextTuesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($NextTuesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -746,7 +745,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $NextWednesday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($NextWednesday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($NextWednesday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -761,7 +760,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $NextThursday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($NextThursday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($NextThursday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
@@ -776,7 +775,7 @@ $NextFriday = mondayFriday($NextMonday);
 			$Dessert = returnPlat("Dessert", $NextFriday);
 			while ($plats = mysql_fetch_assoc($Dessert)) {
 					echo("".$plats['Nom']." :");
-					$res = returnNombreDessert($NextFriday, mysql_real_escape_string($plats['Nom']));
+					$res = returnNombreDessert($NextFriday, $plats['Nom']);
 					if(!isset($res['multi']))
 					{
 						echo ('0<br>');
