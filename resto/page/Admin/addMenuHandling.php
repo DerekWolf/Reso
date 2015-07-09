@@ -221,6 +221,6 @@ mysql_query($req45) or die('Erreur lors de l\'ajout en base de donnés 45');
 
 mysql_close();
 
-header('Location : page/Admin/addMenu.php');
+header('Location : /index.php?page=20');
 
 ?>

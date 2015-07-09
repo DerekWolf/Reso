@@ -13,5 +13,5 @@ $res = mysql_query($sql) or die (mysql_error());
 
 deconnect();
 
-header("location:index.php");
+header("location: /index.php?page=24");
 ?>

@@ -45,7 +45,7 @@ if(!isset($_POST['SAL']))
 if($_POST['ENT'] == "-"){
 	$Ent = $items['Entre'];
 }else{
-	$Ent = $_POST['ENT'];
+	$Ent = mysql_real_escape_string($_POST['ENT']);
 }
 
 if(!isset($_POST['FRO']))
@@ -56,7 +56,7 @@ else{ $Fro = "oui";};
 if($_POST['DES'] == "-"){
 	$Des = $items['Dessert'];
 }else{
-	$Des = $_POST['DES'];
+	$Des = mysql_real_escape_string($_POST['DES']);
 }
 
 if($_POST['INV'] > "0"){

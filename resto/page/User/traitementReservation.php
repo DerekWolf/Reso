@@ -114,6 +114,6 @@ mysql_query($vendredi) or die('Erreur lors de l\'ajout en base de donnés d\'un 
 
 mysql_close();
 
-header('Location: index.php?page=12');
+header('Location: /index.php?page=10);
 
 ?>
