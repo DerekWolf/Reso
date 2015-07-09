@@ -10,39 +10,39 @@ $dateMercredi = $_POST['dateMercredi'];
 $dateJeudi = $_POST['dateJeudi'];
 $dateVendredi = $_POST['dateVendredi'];
 
-if(!isset($_POST['Sal1Lun']))
+if(!isset($_POST['Sal1Lun']) || empty($_POST['Sal1Lun']))
 {
 	$salLun = "-";
 }else{
 	$salLun = mysql_real_escape_string($_POST['Sal1Lun']);
 }
 
-if(!isset($_POST['Sal1Mar']))
+if(!isset($_POST['Sal1Mar']) || empty($_POST['Sal1Mar']))
 {
 	$salMar = "-";
 }else{
 	$salMar = mysql_real_escape_string($_POST['Sal1Mar']);
 }
 
-if(!isset($_POST['Sal1Mer']))
+if(!isset($_POST['Sal1Mer']) || empty($_POST['Sal1Mer']))
 {
 	$salMer = "-";
 }else{
 	$salMer = mysql_real_escape_string($_POST['Sal1Mer']);
 }
 
-if(!isset($_POST['Sal1Jeu']))
+if(!isset($_POST['Sal1Jeu']) || empty($_POST['Sal1Jeu']))
 {
 	$salJeu = "-";
 }else{
 	$salJeu = mysql_real_escape_string($_POST['Sal1Jeu']);
 }
 
-if(!isset($_POST['salVen']))
+if(!isset($_POST['sal1Ven']) || empty($_POST['sal1Ven']))
 {
 	$salVen = "-";
 }else{
-	$salVen = mysql_real_escape_string($_POST['salVen']);
+	$salVen = mysql_real_escape_string($_POST['sal1Ven']);
 }
 
 $ent1Lun = mysql_real_escape_string($_POST['Ent1Lun']);

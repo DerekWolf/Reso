@@ -91,29 +91,54 @@ $NextFriday = mondayFriday($NextMonday);
 		<tr>
 			<th>Salade :</th>
 			<td >
-				<?php $Salade = returnSalade("Salade", $NextMonday); ?>
-				<input type="checkbox" name="LUN_MSAL" id="MenuSaladeL" onclick="checkLun()">
-				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']) ?></p>
+				<?php $Salade = returnSalade("Salade", $NextMonday);
+				if(empty($Salade) || $Salade == "" || $Salade == "-")
+				{
+					echo ("Pas de Salade");
+				}else{ ?>
+					<input type="checkbox" name="LUN_MSAL" id="MenuSaladeL" onclick="checkLun()">
+					<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']) ?></p>
+				<?php } ?>
 			</td>
 			<td >
-				<?php $Salade = returnSalade("Salade", $NextTuesday); ?>
-				<input type="checkbox" name="MAR_MSAL" id="MenuSaladeMa" onclick="checkMar()">
-				<p title="<?php echo ($Salade['Compo']); ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php $Salade = returnSalade("Salade", $NextTuesday);
+				if(empty($Salade) || $Salade == "" || $Salade == "-")
+				{
+					echo ("Pas de Salade");
+				}else{ ?>
+					<input type="checkbox" name="MAR_MSAL" id="MenuSaladeMa" onclick="checkMar()">
+					<p title="<?php echo ($Salade['Compo']); ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php } ?>
 			</td>
 			<td >
-				<?php $Salade = returnSalade("Salade", $NextWednesday); ?>
-				<input type="checkbox" name="MER_MSAL" id="MenuSaladeMe" onclick="checkMer()">
-				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php $Salade = returnSalade("Salade", $NextWednesday);
+				if(empty($Salade) || $Salade == "" || $Salade == "-")
+				{
+					echo ("Pas de Salade");
+				}else{ ?>
+					<input type="checkbox" name="MER_MSAL" id="MenuSaladeMe" onclick="checkMer()">
+					<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php } ?>
 			</td>
 			<td >
-				<?php $Salade = returnSalade("Salade", $NextThursday); ?>
-				<input type="checkbox" name="JEU_MSAL" id="MenuSaladeJ" onclick="checkJeu()">
-				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php $Salade = returnSalade("Salade", $NextThursday); 
+				if(empty($Salade) || $Salade == "" || $Salade == "-")
+				{
+					echo ("Pas de Salade");
+				}else{ ?>
+					<input type="checkbox" name="JEU_MSAL" id="MenuSaladeJ" onclick="checkJeu()">
+					<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>				
+				<?php } ?>
 			</td>
 			<td >
-				<?php $Salade = returnSalade("Salade", $NextFriday); ?>
-				<input type="checkbox" name="VEN_MSAL" id="MenuSaladeV" onclick="checkVen()">
-				<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>
+				<?php $Salade = returnSalade("Salade", $NextFriday); 
+				if(empty($Salade) || $Salade == "" || $Salade == "-")
+				{
+					echo ("Pas de Salade");
+				}else{ ?>
+					<input type="checkbox" name="VEN_MSAL" id="MenuSaladeV" onclick="checkVen()">
+					<p title="<?php echo $Salade['Compo']; ?>"><?php echo ($Salade['Nom']); ?></p>	
+				<?php } ?>
 			</td>
 		</tr>
 		<tr>

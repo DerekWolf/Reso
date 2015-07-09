@@ -49,7 +49,7 @@ $NextFriday = mondayFriday($NextMonday);
 		?></td>
 	</tr>
 	<tr>
-		<th>Entré</th>
+		<th>Entrée</th>
 		<td>
 		<?php
 			$Entree = returnPlat("Entree", $Monday);
@@ -453,7 +453,7 @@ $NextFriday = mondayFriday($NextMonday);
 		?></td>
 	</tr>
 	<tr>
-		<th>Entré</th>
+		<th>Entrée</th>
 		<td>
 		<?php
 			$Entree = returnPlat("Entree", $NextMonday);

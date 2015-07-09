@@ -18,31 +18,34 @@ $items = mysql_fetch_array(voirReservation($id, $Date));
 
 if(!isset($_POST['SAL']))
 { 
-	$Sal = "-";
-	$Via = mysql_real_escape_string($_POST['VIA']);
-	$Acc = mysql_real_escape_string($_POST['ACC']);
+	$Sal = "non";
+
+	if(!isset($_POST['VIA'])){
+		$Via = "-";
+	}elseif ($_POST['VIA'] == "-") {
+		$Via = $items['Viande'];
+	}else{
+		$Via = mysql_real_escape_string($_POST['VIA']);
+	}
+
+	if( !isset($_POST['ACC'])){
+		$Acc = "-";
+	}elseif ($_POST['ACC'] == "-") {
+		$Acc = $items['Accompagnement'];
+	}else{
+		$Acc = mysql_real_escape_string($_POST['ACC']);
+	}
+
 }else{
 	$Sal = "oui";
 	$Via = "-";
 	$Acc = "-";
 };
 
-if($_POST['ENT'] != "-"){
-	$Ent = mysql_real_escape_string($_POST['ENT']);
-}else{
+if($_POST['ENT'] == "-"){
 	$Ent = $items['Entre'];
-}
-
-if($_POST['VIA'] != "-"){
-	$Via = mysql_real_escape_string($_POST['VIA']);
 }else{
-	$Via = $items['Viande'];
-}
-
-if($_POST['ACC'] != "-"){
-	$Acc = mysql_real_escape_string($_POST['ACC']);
-}else{
-	$Acc = $items['Accompagnement'];
+	$Ent = $_POST['ENT'];
 }
 
 if(!isset($_POST['FRO']))
@@ -50,10 +53,10 @@ if(!isset($_POST['FRO']))
 else{ $Fro = "oui";};
 
 
-if($_POST['DES'] != "-"){
-	$Des = mysql_real_escape_string($_POST['DES']);
-}else{
+if($_POST['DES'] == "-"){
 	$Des = $items['Dessert'];
+}else{
+	$Des = $_POST['DES'];
 }
 
 if($_POST['INV'] > "0"){

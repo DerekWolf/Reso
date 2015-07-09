@@ -197,7 +197,7 @@ function returnNombreDessert($date, $nom)
 //Renvoie le nombre de fois ou le menu salade a été commander
 function returnNombreMS($date)
 {
-	$sql = "SELECT sum(Multiplicateur) as multi FROM reservation WHERE Jour='".$date."' and Salade<>'-'";
+	$sql = "SELECT sum(Multiplicateur) as multi FROM reservation WHERE Jour='".$date."' and Salade<>'non' and Salade<>'-'";
 	$res = mysql_query($sql) or die (mysql_error());
 	$ret = mysql_fetch_assoc($res);
 	return $ret;
